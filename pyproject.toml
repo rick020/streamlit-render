@@ -1,0 +1,8 @@
+[project]
+name = "streamlit-dashboard"
+version = "0.1.0"
+description = "A simple Streamlit dashboard for deployment on Render.com."
+authors = ["Your Name <rb.bruins94@example.com>"]
+
+[project.dependencies]
+streamlit = "^1.46.1" 
