@@ -10,12 +10,8 @@ services:
 
   - type: pserv
     name: ollama-server
-    image:
-      url: docker.io/ollama/ollama
     runtime: docker
+    dockerContext: ./ollama
+    dockerfilePath: ./ollama/Dockerfile
     region: frankfurt
     plan: starter  # or standard, depending on your needs
-    disk:
-      name: ollama-models
-      mountPath: /root/.ollama
-      sizeGB: 10
