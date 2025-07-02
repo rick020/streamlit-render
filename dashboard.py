@@ -1,11 +1,18 @@
 import streamlit as st
+from langchain_ollama import OllamaLLM
+import os
 
-st.set_page_config(page_title="Sample Dashboard", layout="wide")
+st.title("🦜🔗 Langchain Quickstart App (Ollama)")
 
-st.title("Welcome to Your Streamlit Dashboard!")
-st.write("This is a simple dashboard deployed on Render.com using uv as the package manager.")
 
-st.header("Sample Chart")
-st.line_chart({
-    'data': [1, 5, 2, 6, 2, 1]
-}) 
+def generate_response(input_text):
+    base_url = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+    llm = OllamaLLM(model="gemma3:1b", base_url=base_url)
+    st.info(llm.invoke(input_text))
+
+
+with st.form("my_form"):
+    text = st.text_area("Enter text:", "What are 3 key advice for learning how to code?")
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+        generate_response(text)

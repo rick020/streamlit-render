@@ -28,7 +28,7 @@ This is a simple Streamlit dashboard ready to be deployed on [Render.com](https:
 2. **Set the build and start commands:**
    - **Build Command:**
      ```sh
-     uv pip install -r requirements.txt
+     pip install -r requirements.txt
      ```
    - **Start Command:**
      ```sh

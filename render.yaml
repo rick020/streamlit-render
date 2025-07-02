@@ -10,3 +10,14 @@ services:
       name: ollama-models
       mountPath: /root/.ollama
       sizeGB: 10
+
+  - type: web
+    name: streamlit-app
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0
+    region: frankfurt
+    plan: starter
+    envVars:
+      - key: OLLAMA_URL
+        value: http://ollama-server:11434
