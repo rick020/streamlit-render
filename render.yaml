@@ -7,6 +7,12 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0
     region: frankfurt
+    envVars:
+    - key: OLLAMA_URL
+      fromService:
+        name: ollama-server
+        type: pserv
+        property: hostport
 
   - type: pserv
     name: ollama-server
