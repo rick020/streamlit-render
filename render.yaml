@@ -3,6 +3,7 @@ services:
     runtime: docker
     name: ollama-server
     dockerfilePath: Dockerfile
+    region: frankfurt
     plan: starter  # or standard, depending on your needs
     disk:
       name: ollama-models
