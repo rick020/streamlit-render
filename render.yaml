@@ -20,4 +20,7 @@ services:
     plan: starter
     envVars:
       - key: OLLAMA_URL
-        value: http://ollama-server:11434
+        fromService:
+          name: ollama-server
+          type: pserv
+          property: hostport
