@@ -1,9 +1,9 @@
 services:
   - type: pserv
-    runtime: docker
     name: ollama-server
-    dockerContext: ./ollama
-    dockerfilePath: ./ollama/Dockerfile
+    image:
+      url: docker.io/ollama/ollama
+    runtime: docker
     region: frankfurt
     plan: starter  # or standard, depending on your needs
     disk:
