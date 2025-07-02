@@ -1,26 +1,10 @@
 services:
-  # - type: pserv
-  #   name: ollama-server
-  #   image:
-  #     url: docker.io/ollama/ollama
-  #   runtime: docker
-  #   region: frankfurt
-  #   plan: starter  # or standard, depending on your needs
-  #   disk:
-  #     name: ollama-models
-  #     mountPath: /root/.ollama
-  #     sizeGB: 10
-
   - type: web
     name: streamlit-app-llm
     runtime: python
+    repo: https://github.com/rick020/streamlit-render
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0
     region: frankfurt
-    plan: starter
-    envVars:
-      - key: OLLAMA_URL
-        fromService:
-          name: ollama-server
-          type: pserv
-          property: hostport
+    
