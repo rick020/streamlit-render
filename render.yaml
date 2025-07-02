@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ollama-server
+    env: docker
+    plan: starter  # Use 'starter' or 'standard' (persistent disks require paid plans)
+    image: ollama/ollama
+    disk:
+      name: ollama-models
+      mountPath: /root/.ollama
+      sizeGB: 10  # Increase as needed
+    ports:
+      - port: 11434
+        protocol: tcp
