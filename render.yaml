@@ -1,15 +1,15 @@
 services:
-  - type: pserv
-    name: ollama-server
-    image:
-      url: docker.io/ollama/ollama
-    runtime: docker
-    region: frankfurt
-    plan: starter  # or standard, depending on your needs
-    disk:
-      name: ollama-models
-      mountPath: /root/.ollama
-      sizeGB: 10
+  # - type: pserv
+  #   name: ollama-server
+  #   image:
+  #     url: docker.io/ollama/ollama
+  #   runtime: docker
+  #   region: frankfurt
+  #   plan: starter  # or standard, depending on your needs
+  #   disk:
+  #     name: ollama-models
+  #     mountPath: /root/.ollama
+  #     sizeGB: 10
 
   - type: web
     name: streamlit-app
