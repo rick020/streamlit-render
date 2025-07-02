@@ -1,8 +1,9 @@
 services:
-  - type: web
+  - type: pserv
+    runtime: docker
     name: ollama-server
-    env: docker
-    plan: starter  # or standard, depending on your needs
+    dockerfilePath: Dockerfile
+    plan: standard  # or standard, depending on your needs
     disk:
       name: ollama-models
       mountPath: /root/.ollama
