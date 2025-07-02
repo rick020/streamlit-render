@@ -3,7 +3,7 @@ services:
     runtime: docker
     name: ollama-server
     dockerfilePath: Dockerfile
-    plan: standard  # or standard, depending on your needs
+    plan: starter  # or standard, depending on your needs
     disk:
       name: ollama-models
       mountPath: /root/.ollama
