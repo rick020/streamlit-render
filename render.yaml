@@ -20,4 +20,4 @@ services:
     dockerContext: ./ollama
     dockerfilePath: ./ollama/Dockerfile
     region: frankfurt
-    plan: starter  # or standard, depending on your needs
+    plan: standard  # or standard, depending on your needs
