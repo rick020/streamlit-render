@@ -7,7 +7,7 @@ st.title("🦜🔗 Langchain Quickstart App (Ollama)")
 
 def generate_response(input_text):
     base_url = os.environ.get("OLLAMA_URL", "localhost:11434")
-    llm = OllamaLLM(model="llama3:latest", base_url=f"http://{base_url}")
+    llm = OllamaLLM(model="gemma:2b", base_url=f"http://{base_url}")
     st.info(llm.invoke(input_text))
 
 
